@@ -41,8 +41,9 @@ type scanner struct {
 	currentLength int
 	lengthStack   []int
 
-	err   error
-	bytes int64
+	err         error
+	bytes       int64
+	escapeStack []byte
 }
 
 const (

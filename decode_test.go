@@ -9,7 +9,9 @@ import (
 type token struct {
 	AccessToken string `php:"access_token"`
 	Expire      int    `php:"expires_in"`
-	inKey       string
+	//ErrorCode    int    `php:"errcode"`
+	//ErrorMessage string `php:"errmsg"`
+	inKey string
 }
 
 type custom struct {
@@ -29,6 +31,8 @@ func (c *custom) UnSerializePHP(data []byte) error {
 func TestDecoder_Decode(t *testing.T) {
 
 	decoder := NewDecoder(strings.NewReader("a:2:{s:12:\"access_token\";s:131:\"NzMwMjAxYTkxYTc4YjY1OWIyYzAxOGUwZGRkNzA0YTctNjcxNmQxN2ZiODc4OGUxNTdhNTE1ZWI0NDc3MWVmNTgtNDQ2NjAyZDIzYmRiMDlkZTczNzZjMWM4MGExNzFhNzU\";s:10:\"expires_in\";i:1580725517;}"))
+	//decoder := NewDecoder(strings.NewReader("a:3:{s:7:\"errcode\";i:1;s:6:\"errmsg\";s:30:\"\\xe7\\xb3\\xbb\\xe7\\xbb\\x9f\\xe5\\xbc\\x82\\xe5\\xb8\\xb8\\xef\\xbc\\x8c\\xe8\\xaf\\xb7\\xe7\\xa8\\x8d\\xe5\\x90\\x8e\\xe5\\x86\\x8d\\xe8\\xaf\\x95\";s:10:\"expires_in\";i:1612508763;}"))
+	//decoder := NewDecoder(strings.NewReader("a:3:{s:7:\"errcode\";i:1;s:6:\"errmsg\";s:5:\"error\";s:10:\"expires_in\";i:1612508763;}"))
 	//decoder := NewDecoder(strings.NewReader("s:6:\"你好\";"))
 	//decoder := NewDecoder(strings.NewReader("d:1.7976931348623157E+308;"))
 	//decoder := NewDecoder(strings.NewReader("a:4:{i:0;s:1:\"1\";i:1;s:1:\"2\";i:2;s:1:\"3\";i:3;s:1:\"4\";}"))

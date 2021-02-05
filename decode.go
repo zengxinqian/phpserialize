@@ -138,7 +138,7 @@ func (d *decodeState) skip() {
 	for {
 		op := s.step(data[i])
 		i++
-		if s.parserDepth() < depth {
+		if s.parserDepth() <= depth {
 			d.off = i
 			d.parserState = op
 			return

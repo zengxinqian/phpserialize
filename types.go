@@ -26,6 +26,8 @@ const phpTerminator byte = ';'
 const phpLeftBraces byte = '{'
 const phpRightBraces byte = '}'
 const phpDoubleQuote byte = '"'
+const phpEscape byte = '\\'
+const phpX byte = 'x'
 
 const phpNullValue = "N;"
 
